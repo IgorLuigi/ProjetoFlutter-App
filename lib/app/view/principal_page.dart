@@ -25,7 +25,7 @@ class _PrincipalState extends State<Principal> {
           IconButton(
             icon: Icon(Icons.remove_circle_rounded),
             onPressed: (){
-              Navigator.of(context).pushNamed(MyApp.DESPESA_FORM);
+              Navigator.of(context).pushNamed(MyApp.DESPESA_LIST);
             }
           )
         ],

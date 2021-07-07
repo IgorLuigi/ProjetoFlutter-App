@@ -1,7 +1,5 @@
 
 
-import 'dart:html';
-
 import 'package:app/app/database/entities/receita.dart';
 import 'package:get_it/get_it.dart';
 
