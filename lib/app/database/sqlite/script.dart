@@ -1,6 +1,6 @@
 final criarTabelaReceita = '''
 CREATE TABLE receita(
-  id INT PRIMARY KEY
+  id INTEGER NOT NULL PRIMARY KEY
   ,descricao VARCHAR(200) NOT NULL
   ,valor DECIMAL(9,2) NOT NULL
   ,data DATE NOT NULL
@@ -9,7 +9,7 @@ CREATE TABLE receita(
 
 final criarTabelaDespesa = '''
 CREATE TABLE despesa(
-  id INT PRIMARY KEY
+  id INTEGER NOT NULL PRIMARY KEY
   ,descricao VARCHAR(200) NOT NULL
   ,valor DECIMAL(9,2) NOT NULL
   ,data DATE NOT NULL
