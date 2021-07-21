@@ -4,10 +4,13 @@ import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import 'despesa_form_back.dart';
 
 class DespesaWidgetForm extends StatelessWidget {
+  final _form = GlobalKey<FormState>();
 
   Widget fieldDescricao(DespesaFormBack back){
-    initialValue: back.despesa.descricao;
     return TextFormField(
+      validator: back.validateDescricao,
+      onSaved: (newValue) => back.despesa.descricao = newValue,
+      initialValue: back.despesa.descricao,
       decoration: InputDecoration(
         labelText: 'Descrição:'
       )
@@ -15,8 +18,10 @@ class DespesaWidgetForm extends StatelessWidget {
   }
 
   Widget fieldValor(DespesaFormBack back){
-    initialValue: back.despesa.valor;
     return TextFormField(
+      // validator: back.validateData,
+      // onSaved: (newValue) => back.despesa.data = newValue,
+      initialValue: back.despesa.valor,
       keyboardType: TextInputType.number,
       decoration: InputDecoration(
         labelText: 'Valor:',
@@ -26,9 +31,11 @@ class DespesaWidgetForm extends StatelessWidget {
   }
 
   Widget fieldData(DespesaFormBack back){
-    initialValue: back.despesa.data;
     var mask = MaskTextInputFormatter(mask: '##/##/####');
     return TextFormField(
+       // validator: back.validateValor,
+      // onSaved: (newValue) => back.despesa.valor = newValue,
+      initialValue: back.despesa.data,
       inputFormatters: [mask],
       decoration: InputDecoration(
         labelText: 'Data:'
@@ -43,12 +50,20 @@ class DespesaWidgetForm extends StatelessWidget {
       appBar: AppBar(
         title: Text('Cadastro de Despesas'),
         actions:[
-          IconButton(icon: Icon(Icons.save), onPressed: null)
+          IconButton(icon: Icon(Icons.save), onPressed: (){
+            _form.currentState.validate();
+            _form.currentState.save();
+            if(_back.isValid){
+              _back.save();
+              Navigator.of(context).pop();
+            }
+          })
         ],
       ),
       body: Padding( 
         padding: EdgeInsets.all(10),
         child: Form(
+          key: _form,
           child: Column(
             children:[
               fieldDescricao(_back),

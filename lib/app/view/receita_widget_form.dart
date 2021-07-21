@@ -3,10 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
 class ReceitaWidgetForm extends StatelessWidget{
+  final _form = GlobalKey<FormState>();
 
   Widget fieldDescricao(ReceitaFormBack back){
-    initialValue: back.receita.descricao;
     return TextFormField(
+      validator: back.validateDescricao,
+      onSaved: (newValue) => back.receita.descricao = newValue,
+      initialValue: back.receita.descricao,
       decoration: InputDecoration(
         labelText: 'Descrição:'
       )
@@ -14,8 +17,10 @@ class ReceitaWidgetForm extends StatelessWidget{
   }
 
   Widget fieldValor(ReceitaFormBack back){
-    initialValue: back.receita.valor;
     return TextFormField(
+      // validator: back.validateData,
+      // onSaved: (newValue) => back.receita.data = newValue,
+      initialValue: back.receita.valor,
       keyboardType: TextInputType.number,
       decoration: InputDecoration(
         labelText: 'Valor:',
@@ -25,9 +30,11 @@ class ReceitaWidgetForm extends StatelessWidget{
   }
 
   Widget fieldData(ReceitaFormBack back){
-    initialValue: back.receita.data;
     var mask = MaskTextInputFormatter(mask: '##/##/####');
     return TextFormField(
+      // validator: back.validateValor,
+      // onSaved: (newValue) => back.receita.valor = newValue,
+      initialValue: back.receita.data,
       inputFormatters: [mask],
       decoration: InputDecoration(
         labelText: 'Data:'
@@ -42,12 +49,20 @@ class ReceitaWidgetForm extends StatelessWidget{
       appBar: AppBar(
         title: Text('Cadastro de Receitas'),
         actions:[
-          IconButton(icon: Icon(Icons.save), onPressed: null)
+          IconButton(icon: Icon(Icons.save), onPressed: (){
+            _form.currentState.validate();
+            _form.currentState.save();
+            if(_back.isValid){
+              _back.save();
+              Navigator.of(context).pop();
+            }
+          })
         ],
       ),
       body: Padding( 
         padding: EdgeInsets.all(10),
         child: Form(
+          key: _form,
           child: Column(
             children:[
               fieldDescricao(_back),
