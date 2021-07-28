@@ -43,11 +43,12 @@ class DespesaWidgetList extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           title: Text('Lista de Despesas'),
+          backgroundColor: Color.fromRGBO(139, 0, 139, 0.8),
           actions: [
             IconButton(
               icon: Icon(Icons.add),
               onPressed: () {
-                Navigator.of(context).pushNamed(MyApp.DESPESA_FORM);
+                _back.goToForm(context);
               },
             )
           ],
@@ -66,6 +67,9 @@ class DespesaWidgetList extends StatelessWidget {
                       var despesa = listadespesa[i];
                       var listTile = ListTile(
                         title: Text(despesa.descricao),
+                        onTap: (){
+                           _back.goToDetails(context, despesa);
+                        },
                         subtitle: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [

@@ -17,7 +17,7 @@ class Connection{
         onCreate: (db, v){
           db.execute(criarTabelaReceita);
           db.execute(criarTabelaDespesa);
-          db.execute(insert1);
+          db.execute(insert1); 
           db.execute(insert2);
           db.execute(insert3);
           db.execute(insert4);

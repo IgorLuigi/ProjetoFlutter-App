@@ -5,6 +5,8 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 
 import '../my_app.dart';
 
+
+
 class ReceitaWidgetList extends StatelessWidget {
   final _back = ReceitaListBack();
 
@@ -40,12 +42,13 @@ class ReceitaWidgetList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          backgroundColor: Color.fromRGBO(139, 0, 139, 0.8),
           title: Text('Lista de Receitas'),
           actions: [
             IconButton(
               icon: Icon(Icons.add),
               onPressed: () {
-                Navigator.of(context).pushNamed(MyApp.RECEITA_FORM);
+                _back.goToForm(context);
               },
             )
           ],
@@ -64,6 +67,9 @@ class ReceitaWidgetList extends StatelessWidget {
                       var receita = listareceita[i];
                       var listTile = ListTile(
                         title: Text(receita.descricao),
+                        onTap: (){
+                          _back.goToDetails(context, receita);
+                        },
                         subtitle: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [

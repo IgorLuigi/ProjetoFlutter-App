@@ -47,6 +47,7 @@ class ReceitaWidgetForm extends StatelessWidget{
     var _back = ReceitaFormBack(context);
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color.fromRGBO(139, 0, 139, 0.8),
         title: Text('Cadastro de Receitas'),
         actions:[
           IconButton(icon: Icon(Icons.save), onPressed: (){

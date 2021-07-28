@@ -1,3 +1,5 @@
+//import 'dart:html';
+
 import 'package:flutter/material.dart';
 
 import '../my_app.dart';
@@ -14,6 +16,8 @@ class _PrincipalState extends State<Principal> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        //backgroundColor: Colors.purpleAccent,
+        backgroundColor: Color.fromRGBO(139, 0, 139, 0.8),
         title: Text('Principal'),
         actions: [
           IconButton(

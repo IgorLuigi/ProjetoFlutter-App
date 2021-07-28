@@ -32,6 +32,10 @@ abstract class _DespesaListBack with Store{
     Navigator.of(context).pushNamed(MyApp.DESPESA_FORM, arguments: despesa).then(refreshList);
   }
 
+  goToDetails(BuildContext context, Despesa despesa){
+    Navigator.of(context).pushNamed(MyApp.DESPESA_DETAILS, arguments: despesa);
+  }
+
   //excluir
   remove(int id){
     _service.remove(id);

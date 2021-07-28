@@ -48,6 +48,7 @@ class DespesaWidgetForm extends StatelessWidget {
     var _back = DespesaFormBack(context);
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color.fromRGBO(139, 0, 139, 0.8),
         title: Text('Cadastro de Despesas'),
         actions:[
           IconButton(icon: Icon(Icons.save), onPressed: (){

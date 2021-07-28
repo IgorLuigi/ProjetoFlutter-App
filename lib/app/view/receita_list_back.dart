@@ -32,6 +32,10 @@ abstract class _ReceitaListBack with Store{
     Navigator.of(context).pushNamed(MyApp.RECEITA_FORM, arguments: receita).then(refreshList);
   }
 
+  goToDetails(BuildContext context, Receita receita){
+    Navigator.of(context).pushNamed(MyApp.RECEITA_DETAILS, arguments: receita);
+  }
+
   //excluir
   remove(int id){
     _service.remove(id);
