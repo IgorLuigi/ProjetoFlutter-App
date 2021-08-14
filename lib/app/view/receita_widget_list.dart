@@ -46,7 +46,8 @@ class ReceitaWidgetList extends StatelessWidget {
           title: Text('Lista de Receitas'),
           actions: [
             IconButton(
-              icon: Icon(Icons.add),
+              color: Colors.white,
+              icon: Icon(Icons.add_circle_rounded),
               onPressed: () {
                 _back.goToForm(context);
               },

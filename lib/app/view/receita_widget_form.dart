@@ -19,7 +19,7 @@ class ReceitaWidgetForm extends StatelessWidget{
   Widget fieldValor(ReceitaFormBack back){
     return TextFormField(
       // validator: back.validateData,
-      // onSaved: (newValue) => back.receita.data = newValue,
+      onSaved: (newValue) => back.receita.data = newValue,
       initialValue: back.receita.valor,
       keyboardType: TextInputType.number,
       decoration: InputDecoration(
@@ -33,7 +33,7 @@ class ReceitaWidgetForm extends StatelessWidget{
     var mask = MaskTextInputFormatter(mask: '##/##/####');
     return TextFormField(
       // validator: back.validateValor,
-      // onSaved: (newValue) => back.receita.valor = newValue,
+      onSaved: (newValue) => back.receita.valor = newValue,
       initialValue: back.receita.data,
       inputFormatters: [mask],
       decoration: InputDecoration(

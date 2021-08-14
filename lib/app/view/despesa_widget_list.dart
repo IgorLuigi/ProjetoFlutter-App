@@ -46,7 +46,8 @@ class DespesaWidgetList extends StatelessWidget {
           backgroundColor: Color.fromRGBO(139, 0, 139, 0.8),
           actions: [
             IconButton(
-              icon: Icon(Icons.add),
+              color: Colors.white,
+              icon: Icon(Icons.remove_circle_rounded),
               onPressed: () {
                 _back.goToForm(context);
               },

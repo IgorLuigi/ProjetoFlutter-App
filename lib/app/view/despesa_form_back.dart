@@ -10,11 +10,11 @@ class DespesaFormBack{
   Despesa despesa;
   var _service = GetIt.I.get<DespesaService>();  
   bool _descricaoIsValid;
-  bool _dataIsValid;
-  bool _valorIsValid;
+  //bool _dataIsValid;
+  //bool _valorIsValid;
 
 
-  bool get isValid => _descricaoIsValid && _dataIsValid && _valorIsValid;
+  bool get isValid => _descricaoIsValid; //&& _dataIsValid && _valorIsValid;
   
 
   //diferenciar novo com a alteração 

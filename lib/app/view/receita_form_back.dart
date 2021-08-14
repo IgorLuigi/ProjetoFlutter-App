@@ -10,12 +10,12 @@ import 'package:get_it/get_it.dart';
 class ReceitaFormBack {
   Receita receita;
   var _service = GetIt.I.get<ReceitaService>();  
-  bool _descricaoIsValid;
-  bool _dataIsValid;
-  bool _valorIsValid;
+  bool _descricaoIsValid = true;
+  //bool _dataIsValid = true;
+  //bool _valorIsValid = true;
 
 
-  bool get isValid => _descricaoIsValid && _dataIsValid && _valorIsValid;
+  bool get isValid => _descricaoIsValid; //&& _dataIsValid && _valorIsValid;
 
   //diferenciar novo com a alteração 
   ReceitaFormBack(BuildContext context){
@@ -41,6 +41,8 @@ class ReceitaFormBack {
       return e.toString();
     }
   }
+
+  
 
   // String validateData(String data){
   //   try{ 

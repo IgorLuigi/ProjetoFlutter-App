@@ -33,7 +33,7 @@ class ReceitaDetails extends StatelessWidget {
             padding: EdgeInsets.all(60),
             children: [
               Center(
-                child: Text('${receita.descricao}', style: TextStyle(fontSize: 30, backgroundColor: Colors.white),),
+                child: Text('${receita.descricao}', style: TextStyle(fontSize: 30, backgroundColor: Colors.white,),),
               ),
               Card(
                 child: ListTile(

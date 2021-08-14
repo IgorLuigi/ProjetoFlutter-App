@@ -21,6 +21,7 @@ class Connection{
           db.execute(insert2);
           db.execute(insert3);
           db.execute(insert4);
+          db.execute(insert5);
         },
       );
     }

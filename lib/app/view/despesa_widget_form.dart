@@ -20,7 +20,7 @@ class DespesaWidgetForm extends StatelessWidget {
   Widget fieldValor(DespesaFormBack back){
     return TextFormField(
       // validator: back.validateData,
-      // onSaved: (newValue) => back.despesa.data = newValue,
+      onSaved: (newValue) => back.despesa.data = newValue,
       initialValue: back.despesa.valor,
       keyboardType: TextInputType.number,
       decoration: InputDecoration(
@@ -34,7 +34,7 @@ class DespesaWidgetForm extends StatelessWidget {
     var mask = MaskTextInputFormatter(mask: '##/##/####');
     return TextFormField(
        // validator: back.validateValor,
-      // onSaved: (newValue) => back.despesa.valor = newValue,
+      onSaved: (newValue) => back.despesa.valor = newValue,
       initialValue: back.despesa.data,
       inputFormatters: [mask],
       decoration: InputDecoration(

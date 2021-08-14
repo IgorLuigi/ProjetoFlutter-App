@@ -37,3 +37,7 @@ INSERT INTO despesa (descricao, valor, data)
 VALUES ('Refrigerante','6,00','20/06/2021')
 ''';
 
+final insert5= '''
+INSERT INTO receita (descricao, valor, data)
+VALUES ('teste','5,00','20/06/2021')
+''';
