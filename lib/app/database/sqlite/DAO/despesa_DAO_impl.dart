@@ -30,7 +30,7 @@ class DespesaDAOImpl implements DespesaDAO{
   remove(int id) async{
       _db = await Connection.get();
       var sql = 'DELETE FROM despesa WHERE id = ?';
-      _db.rawDelete(sql, [id]);
+      _db.rawDelete(sql, [id]); 
     }
   
     @override

@@ -25,8 +25,9 @@ class ReceitaFormBack {
 
 
   //salvar
-  save() async {
+  save(BuildContext context) async {
     await _service.save(receita);
+    Navigator.of(context).pop();
   }
 
   //validações

@@ -86,8 +86,7 @@ class DespesaWidgetList extends StatelessWidget {
                                   _back.goToForm(context, despesa);
                                 }),
                                 iconRemoveButton(context, (){
-                                  _back.remove(despesa.id);
-                                  Navigator.of(context).pop();
+                                  _back.remove(despesa.id, context);
                                 })
                               ],
                             )),

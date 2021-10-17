@@ -68,7 +68,7 @@ class _PrincipalState extends State<Principal> {
             ),
             Card(
                child: ListTile(
-                title: Text('Receita:'),
+                title: Text('Despesa:'),
                 trailing: Container(
                   width: width/6,
                   child: Row(

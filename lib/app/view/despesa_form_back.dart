@@ -24,8 +24,9 @@ class DespesaFormBack{
   }
 
   //salvar
-  save() async {
+  save(BuildContext context) async {
     await _service.save(despesa);
+    Navigator.of(context).pop();
   }
 
   //validações

@@ -37,8 +37,9 @@ abstract class _DespesaListBack with Store{
   }
 
   //excluir
-  remove(int id){
-    _service.remove(id);
+  remove(int id, BuildContext context) async{
+    await _service.remove(id);
     refreshList;
+    Navigator.of(context).pop();
   }
 }

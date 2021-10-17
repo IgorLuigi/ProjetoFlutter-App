@@ -17,8 +17,8 @@ class DespesaService{
     _daodespesa.save(despesa);
   }
 
-  remove(int id){
-    _daodespesa.remove(id);
+  remove(int id) async{
+    await _daodespesa.remove(id);
   }
 
   Future<List<Despesa>> find(){

@@ -10,13 +10,13 @@ class ReceitaService{
   //var daoreceita = ReceitaDAOImpl();
   var _daoreceita = GetIt.I.get<ReceitaDAO>();
 
-  save(Receita receita){
+  save(Receita receita) async{
     validateDescricao(receita.descricao);
     _daoreceita.save(receita);
   }
 
-  remove(int id){
-    _daoreceita.remove(id);
+  remove(int id) async{
+    await _daoreceita.remove(id);
   }
 
   Future<List<Receita>> find(){
